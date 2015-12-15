@@ -1,0 +1,76 @@
+
+/******************************************************************************
+
+---------------
+users
+---------------
+id
+username
+password
+
+
+---------------
+profiles
+---------------
+id
+nickname
+avatar
+age
+sex
+memo
+createTime
+updateTime
+
+---------------
+points
+---------------
+id
+pointTime
+pointID
+pointValue
+
+
+fields
+---------------
+id
+pointID
+pointName
+
+******************************************************************************/
+
+
+create database kidpoint;
+
+use kidpoint;
+
+create table users(
+	id int unsigned not null primary key auto_increment,
+	userName varchar(50) not null default '',
+	password varchar(50) not null default '',
+	regTime int unsigned not null default 0
+)engine=myisam charset=utf8;
+
+create table profiles(
+	id int unsigned not null primary key,
+	nickname varchar(50) not null default '',
+	avatar varchar(50) default '',
+	age smallint,
+	sex varchar(2),
+	memo text,
+	createTime int unsigned not null default 0,
+	updateTime int unsigned not null default 0
+)engine=myisam charset=utf8;
+
+create table points(
+	id int unsigned not null,
+	pointTime int unsigned not null primary key default 0,
+	pointID int unsigned not null,
+	pointValue int unsigned not null
+)engine=myisam charset=utf8;
+
+create table fields(
+	id int unsigned not null,
+	pointID int unsigned not null,
+	pointName varchar(50) not null default '',
+	unique key `UKEY` (`id`,`pointID`)
+)engine=myisam charset=utf8;

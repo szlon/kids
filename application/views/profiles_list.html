@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>users</title>
+</head>
+<body>
+
+<table width = 600 border = 0 bgcolor="#dcdcdc">
+	<?php foreach($profiles as $row) : ?>
+		<tr>
+			<td><?php echo $row['id'] ?> </td>
+			<td><?php echo $row['nickname'] ?> </td>
+			<td><?php echo $row['avatar'] ?> </td>
+			<td><?php echo $row['age'] ?> </td>
+			<td><?php echo $row['sex'] ?> </td>
+			<td><?php echo $row['memo'] ?> </td>
+			<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['createTime']) ?> </td>
+			<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['updateTime']) ?> </td>
+
+		</tr>
+	<?php endforeach; ?>
+</table>
+
+</body>
+</html>

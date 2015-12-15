@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>users</title>
+</head>
+<body>
+
+<table width = 600 border = 0 bgcolor="#dcdcdc">
+	<?php foreach($users as $row) : ?>
+		<tr>
+			<td><?php echo $row['id'] ?> </td>
+			<td><?php echo $row['userName'] ?> </td>
+			<td><?php echo $row['password'] ?> </td>
+			<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['regTime']) ?> </td>
+
+		</tr>
+	<?php endforeach; ?>
+</table>
+
+</body>
+</html>
