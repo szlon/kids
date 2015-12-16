@@ -51,8 +51,11 @@ class Profiles extends CI_Controller
 
 	public function get($id)
 	{
-		$query['profiles'] = $this->Profiles_model->GetRecords($id);
-		$this->load->view('profiles_list.html', $query);
+		$data['title'] = 'Profiles';
+		$data['profiles'] = $this->Profiles_model->GetRecords($id);
+		//$this->load->view('profiles_list.html', $data);
+		$this->load->view('profiles_list.php', $data);
+
 	}
 
 }

@@ -46,8 +46,10 @@ class Fields extends CI_Controller
 
 	public function get($id)
 	{
-		$query['fields'] = $this->Fields_model->GetRecords($id);
-		$this->load->view('fields_list.html', $query);
+		$data['title'] = 'Fields';
+		$data['fields'] = $this->Fields_model->GetRecords($id);
+		//$this->load->view('fields_list.html', $data);
+		$this->load->view('fields_list.php', $data);
 	}
 
 
