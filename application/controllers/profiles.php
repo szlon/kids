@@ -17,7 +17,10 @@ class Profiles extends CI_Controller
 
 	public function Add()
 	{
-		$this->load->view('profiles_add.html');
+		//$this->load->view('profiles_add.html');
+		$data['title'] = 'Profiles_add Edit';
+		$this->load->view('profiles_add.php', $data);
+
 	}
 
 	public function Add_Post()

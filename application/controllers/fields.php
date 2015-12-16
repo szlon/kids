@@ -17,7 +17,9 @@ class Fields extends CI_Controller
 
 	public function Add()
 	{
-		$this->load->view('fields_add.html');
+		//$this->load->view('fields_add.html');
+		$data['title'] = 'Fields Edit';
+		$this->load->view('fields_add.php', $data);
 	}
 
 	public function Add_Post()

@@ -19,7 +19,10 @@ class Users extends CI_Controller
 
 	public function Add()
 	{
-		$this->load->view('users_add.html');
+		//$this->load->view('users_add.html');
+		$data['title'] = 'Users Edit';
+		$this->load->view('users_add.php', $data);
+
 	}
 
 	public function Add_Post()

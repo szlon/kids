@@ -17,7 +17,9 @@ class Points extends CI_Controller
 
 	public function Add()
 	{
-		$this->load->view('points_add.html');
+		//$this->load->view('points_add.html');
+		$data['title'] = 'Points Edit';
+		$this->load->view('points_add.php', $data);
 	}
 
 	public function Add_Post()
@@ -51,7 +53,8 @@ class Points extends CI_Controller
 		$data['title'] = 'Points';
 		$data['points'] = $this->Points_model->GetRecords($id);
 
-		$this->load->view('points_list.html', $data);
+		//$this->load->view('points_list.html', $data);
+		$this->load->view('points_list.php', $data);
 	}
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Points</title>
+	<title><?php echo $title; ?></title>
 	<!-- 包含头部信息用于适应不同设备 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- 包含 bootstrap 样式表 -->
