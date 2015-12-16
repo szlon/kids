@@ -48,8 +48,10 @@ class Points extends CI_Controller
 
 	public function get($id)
 	{
-		$query['points'] = $this->Points_model->GetRecords($id);
-		$this->load->view('points_list.html', $query);
+		$data['title'] = 'Points';
+		$data['points'] = $this->Points_model->GetRecords($id);
+
+		$this->load->view('points_list.html', $data);
 	}
 
 
