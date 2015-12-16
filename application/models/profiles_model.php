@@ -32,11 +32,11 @@ class Profiles_model extends CI_Model
 
     public function GetRecords($id=0)
     {
-        //$sql = "SELECT users.id, users.userName, fields.pointName, points.pointValue FROM users, fields, points WHERE users.id = ? AND users.id = fields.id AND users.id = points.id";
+        //$sql = "SELECT users.id, users.userName, profiles.nickname, profiles.avatar, profiles.age, profiles.sex, profiles.memo, profiles.createTime, profiles.updateTime FROM users, profiles WHERE users.id = 1 AND users.id = profiles.id";
 
-        $sql =  "SELECT users.id, users.userName, fields.pointName, points.pointValue FROM users, fields, points WHERE";
+        $sql =  "SELECT users.id, users.userName, profiles.nickname, profiles.avatar, profiles.age, profiles.sex, profiles.memo, profiles.createTime, profiles.updateTime FROM users, profiles WHERE";
 
-        $sqlWhere = "users.id = fields.id AND users.id = points.id AND fields.pointID = points.pointID";
+        $sqlWhere = "users.id = profiles.id";
 
         if($id > 0)
         {

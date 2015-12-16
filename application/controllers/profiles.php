@@ -43,12 +43,16 @@ class Profiles extends CI_Controller
 
 	public function show()
 	{
-		$query['profiles'] = $this->Profiles_model->GetAll();
-
-
-		$this->load->view('profiles_list.html', $query);
+		//$query['profiles'] = $this->Profiles_model->GetAll();
+		//$this->load->view('profiles_list.html', $query);
+		$this->get(0);
 
 	}
 
+	public function get($id)
+	{
+		$query['profiles'] = $this->Profiles_model->GetRecords($id);
+		$this->load->view('profiles_list.html', $query);
+	}
 
 }

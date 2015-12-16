@@ -8,6 +8,8 @@ class Users extends CI_Controller
 		parent:: __construct();
 
 		$this->load->model('Users_model');
+		$this->load->model('Profiles_model');
+
 	}
 
 	public function index()
@@ -51,6 +53,12 @@ class Users extends CI_Controller
 
 		$this->load->view('users_list.html', $query);
 
+	}
+
+	public function get($id)
+	{
+		$query['profiles'] = $this->Profiles_model->GetRecords($id);
+		$this->load->view('profiles_list.html', $query);
 	}
 
 
