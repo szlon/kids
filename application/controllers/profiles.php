@@ -12,7 +12,16 @@ class Profiles extends CI_Controller
 
 	public function index()
 	{
-		$this->show();
+		$userID = $this->session->userdata('userID');
+
+		if (isset($userID) && !empty($userID))
+		{
+			$this->get($userID);
+		}
+		else
+		{
+			redirect(site_url('account/login/'));
+		}
 	}
 
 	public function Add()
