@@ -18,27 +18,51 @@
 			<form class="form-horizontal" action="<?php echo site_url('points/Add_Post') ?>" method="post">
 				<fieldset>
 
-					<div class="control-group">
+					<div class="control-group hide">
 						<!-- Text input-->
 						<label class="control-label" for="input01">用户编号</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" name="id">
+							<input type="text" class="input-xlarge" name="id" value="<?php echo $userID; ?>">
 						</div>
 					</div>
 
 					<div class="control-group">
 						<!-- Text input-->
-						<label class="control-label" for="input01">字段编号</label>
+						<label class="control-label" for="input01">字段</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" name="pointID">
+							<!-- <input type="text" class="input-xlarge" name="pointID"> -->
+
+							<select class="combobox" name="pointID">
+								<?php foreach($fields as $row) : ?>
+									<option value="<?php echo $row['pointID'] ?>">
+										<?php echo $row['pointName'] ?>
+									</option>
+								<?php endforeach; ?>
+							</select>
+
+
 						</div>
+
 					</div>
 
+					<!--
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							选择字段
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">项目 1</a></li>
+							<li><a href="#">项目 2</a></li>
+						</ul>
+					</div>
+					-->
+					
 					<div class="control-group">
 						<!-- Text input-->
-						<label class="control-label" for="input01">积分数值</label>
+						<label class="control-label" for="input01">数值</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" name="pointValue">
+							<input type="text" class="input" name="pointValue">
 						</div>
 					</div>
 
@@ -55,6 +79,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
 <!-- 可选: 包含 jQuery 库 -->

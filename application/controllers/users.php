@@ -43,7 +43,8 @@ class Users extends CI_Controller
 
 		if($this->Users_model->Add($data))
 		{
-			echo 'success';
+			//echo 'success';
+			redirect(site_url('users'));
 		}
 		else
 		{

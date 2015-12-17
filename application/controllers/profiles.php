@@ -28,6 +28,7 @@ class Profiles extends CI_Controller
 	{
 		//$this->load->view('profiles_add.html');
 		$data['title'] = 'Profiles_add Edit';
+		$data['userID'] = $this->session->userdata('userID');
 		$this->load->view('profiles_add.php', $data);
 
 	}
@@ -45,7 +46,8 @@ class Profiles extends CI_Controller
 
 		if($this->Profiles_model->Add($data))
 		{
-			echo 'success';
+			//echo 'success';
+			redirect(site_url('profiles'));
 		}
 		else
 		{

@@ -21,7 +21,7 @@
 						<!-- Text input-->
 						<label class="control-label" for="input01">用户编号</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" name="id">
+							<input type="text" class="input-xlarge" name="id" value="<?php echo $userID; ?>">
 						</div>
 					</div>
 

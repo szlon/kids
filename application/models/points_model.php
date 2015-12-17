@@ -72,4 +72,5 @@ class Points_model extends CI_Model
 
     }
 
+
 }

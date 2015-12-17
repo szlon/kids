@@ -28,6 +28,7 @@ class Fields extends CI_Controller
 	{
 		//$this->load->view('fields_add.html');
 		$data['title'] = 'Fields Edit';
+		$data['userID'] = $this->session->userdata('userID');
 		$this->load->view('fields_add.php', $data);
 	}
 
@@ -39,7 +40,8 @@ class Fields extends CI_Controller
 
 		if($this->Fields_model->Add($data))
 		{
-			echo 'success';
+			//echo 'success';
+			redirect(site_url('fields'));
 		}
 		else
 		{

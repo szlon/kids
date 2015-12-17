@@ -8,6 +8,7 @@ class Points extends CI_Controller
 		parent:: __construct();
 
 		$this->load->model('Points_model');
+		$this->load->model('Fields_model');
 	}
 
 	public function index()
@@ -26,8 +27,13 @@ class Points extends CI_Controller
 
 	public function Add()
 	{
+		$userID = $this->session->userdata('userID');
+
+		$data['fields'] = $this->Fields_model->GetRecords($userID);
+
 		//$this->load->view('points_add.html');
 		$data['title'] = 'Points Edit';
+		$data['userID'] = $userID;
 		$this->load->view('points_add.php', $data);
 	}
 
@@ -38,16 +44,19 @@ class Points extends CI_Controller
 		$data['pointValue'] = $_POST['pointValue'];
 		$data['pointTime'] = time();
 
+		//echo $data['pointID'].' - '.$data['pointValue'];
+
 		if($this->Points_model->Add($data))
 		{
-			echo 'success';
+			//echo 'success';
+			redirect(site_url('points'));
 		}
 		else
 		{
 			echo 'failed';
 		}
-	}
 
+	}
 
 	public function show()
 	{
