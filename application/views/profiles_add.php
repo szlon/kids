@@ -11,74 +11,75 @@
 <body>
 
 <div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading active"><?php echo $title; ?></div>
+		<div class="panel-body">
 
-	<form class="form-horizontal" action="<?php echo site_url('profiles/Add_Post') ?>" method="post">
-		<fieldset>
-			<div id="legend" class="">
-				<legend class=""><?php echo $title; ?></legend>
-			</div>
-
-			<div class="control-group">
-				<!-- Text input-->
-				<label class="control-label" for="input01">用户编号</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" name="id">
-				</div>
-			</div>
-
-			<div class="control-group">
-				<!-- Text input-->
-				<label class="control-label" for="input01">用户昵称</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" name="nickname">
-				</div>
-			</div>
-
-			<div class="control-group">
-				<!-- Text input-->
-				<label class="control-label" for="input01">头像图片</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" name="avatar">
-				</div>
-			</div>
-
-			<div class="control-group">
-				<!-- Text input-->
-				<label class="control-label" for="input01">性别</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" name="sex">
-				</div>
-			</div>
-
-			<div class="control-group">
-				<!-- Text input-->
-				<label class="control-label" for="input01">年龄</label>
-				<div class="controls">
-					<input type="text" class="input-xlarge" name="age">
-				</div>
-			</div>
-
-
-			<div class="control-group">
-				<!-- Textarea -->
-				<label class="control-label">备注</label>
-				<div class="controls">
-					<div class="textarea">
-						<textarea type="" class="" name="memo"> </textarea>
+			<form class="form-horizontal" action="<?php echo site_url('profiles/Add_Post') ?>" method="post">
+				<fieldset>
+					<div class="control-group">
+						<!-- Text input-->
+						<label class="control-label" for="input01">用户编号</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" name="id">
+						</div>
 					</div>
-				</div>
-			</div>
 
-			<div class="control-group">
-				<label class="control-label"></label>
-				<!-- Button -->
-				<div class="controls">
-					<button type="submit" class="btn btn-success" >添加</button>
-				</div>
-			</div>
-		</fieldset>
-	</form>
+					<div class="control-group">
+						<!-- Text input-->
+						<label class="control-label" for="input01">用户昵称</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" name="nickname">
+						</div>
+					</div>
 
+					<div class="control-group">
+						<!-- Text input-->
+						<label class="control-label" for="input01">头像图片</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" name="avatar">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<!-- Text input-->
+						<label class="control-label" for="input01">性别</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" name="sex">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<!-- Text input-->
+						<label class="control-label" for="input01">年龄</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge" name="age">
+						</div>
+					</div>
+
+
+					<div class="control-group">
+						<!-- Textarea -->
+						<label class="control-label">备注</label>
+						<div class="controls">
+							<div class="textarea">
+								<textarea type="" class="" name="memo"> </textarea>
+							</div>
+						</div>
+					</div>
+
+					<div class="control-group">
+						<label class="control-label"></label>
+						<!-- Button -->
+						<div class="controls">
+							<button type="submit" class="btn btn-success" >添加</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+
+		</div>
+	</div>
 </div>
 
 <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->

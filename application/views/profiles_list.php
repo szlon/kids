@@ -2,55 +2,60 @@
 <html>
 <head>
 	<title><?php echo $title; ?></title>
-	<!-- °üº¬Í·²¿ÐÅÏ¢ÓÃÓÚÊÊÓ¦²»Í¬Éè±¸ -->
+	<!-- ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Í¬ï¿½è±¸ -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- °üº¬ bootstrap ÑùÊ½±í -->
+	<!-- ï¿½ï¿½ï¿½ï¿½ bootstrap ï¿½ï¿½Ê½ï¿½ï¿½ -->
 	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 
 <body>
 
 <div class="container">
-	<h2><?php echo $title; ?></h2>
+	<div class="panel panel-primary">
+		<div class="panel-heading active"><?php echo $title; ?></div>
+		<div class="panel-body">
 
-	<div class="table-responsive">
-		<table class="table table-striped table-bordered">
-			<thead>
-			<tr>
-				<th>ID</th>
-				<th>Nickname</th>
-				<th>Avatar</th>
-				<th>Age</th>
-				<th>Sex</th>
-				<th>Memo</th>
-				<th>CreateTime</th>
-				<th>UpdateTime</th>
-			</tr>
-			</thead>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nickname</th>
+						<th>Avatar</th>
+						<th>Age</th>
+						<th>Sex</th>
+						<th>Memo</th>
+						<th>CreateTime</th>
+						<th>UpdateTime</th>
+					</tr>
+					</thead>
 
-			<tbody>
-			<?php foreach($profiles as $row) : ?>
-				<tr>
-					<td><?php echo $row['id'] ?> </td>
-					<td><?php echo $row['nickname'] ?> </td>
-					<td><?php echo $row['avatar'] ?> </td>
-					<td><?php echo $row['age'] ?> </td>
-					<td><?php echo $row['sex'] ?> </td>
-					<td><?php echo $row['memo'] ?> </td>
-					<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['createTime']) ?> </td>
-					<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['updateTime']) ?> </td>
+					<tbody>
+					<?php foreach($profiles as $row) : ?>
+						<tr>
+							<td><?php echo $row['id'] ?> </td>
+							<td><?php echo $row['nickname'] ?> </td>
+							<td><?php echo $row['avatar'] ?> </td>
+							<td><?php echo $row['age'] ?> </td>
+							<td><?php echo $row['sex'] ?> </td>
+							<td><?php echo $row['memo'] ?> </td>
+							<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['createTime']) ?> </td>
+							<td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['updateTime']) ?> </td>
 
-				</tr>
-			<?php endforeach; ?>
-			</tbody>
-		</table>
+						</tr>
+					<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
 	</div>
 </div>
 
-<!-- JavaScript ·ÅÖÃÔÚÎÄµµ×îºóÃæ¿ÉÒÔÊ¹Ò³Ãæ¼ÓÔØËÙ¶È¸ü¿ì -->
-<!-- ¿ÉÑ¡: °üº¬ jQuery ¿â -->
+<!-- JavaScript ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù¶È¸ï¿½ï¿½ï¿½ -->
+<!-- ï¿½ï¿½Ñ¡: ï¿½ï¿½ï¿½ï¿½ jQuery ï¿½ï¿½ -->
 <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- ¿ÉÑ¡: ºÏ²¢ÁË Bootstrap JavaScript ²å¼þ -->
+<!-- ï¿½ï¿½Ñ¡: ï¿½Ï²ï¿½ï¿½ï¿½ Bootstrap JavaScript ï¿½ï¿½ï¿½ -->
 <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 
