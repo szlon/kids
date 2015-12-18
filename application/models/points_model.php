@@ -72,5 +72,29 @@ class Points_model extends CI_Model
 
     }
 
+    public function GetSum($id=0)
+    {
+        $sql =  "SELECT SUM(points.pointValue) AS pointValue FROM points WHERE";
+
+        if($id > 0)
+        {
+            $sql = $sql . " points.id = ?";
+        }
+        else
+        {
+            $sql = $sql . " points.id > ?";
+        }
+
+        $sql = $sql . "  LIMIT 0,1";
+
+        $query = $this->db->query($sql, array($id));
+
+        foreach( $query->result_array() as $row)
+        {
+            $sum = $row['pointValue'];
+        }
+
+        return $sum;
+    }
 
 }

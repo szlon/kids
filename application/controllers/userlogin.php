@@ -94,7 +94,7 @@ class Userlogin extends CI_Controller
 
                     $data['regTime'] = time();
                     $this->db->insert('users', $data );
-
+                    redirect(site_url('users'));
                     //$this->load->view('usercenter', $data );
                 }
 

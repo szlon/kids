@@ -12,7 +12,7 @@
 
 <div class="container">
   <div class="panel panel-primary">
-    <div class="panel-heading active"><?php echo $title; ?></div>
+    <div class="panel-heading active"><?php echo $title . '  ' . 'Total: ' . $pointSum; ?></div>
     <div class="panel-body">
 
       <div class="table-responsive">

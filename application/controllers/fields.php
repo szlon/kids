@@ -35,7 +35,7 @@ class Fields extends CI_Controller
 	public function Add_Post()
 	{
 		$data['id'] = $_POST['id'];
-		$data['pointID'] = $_POST['pointID'];
+		//$data['pointID'] = $_POST['pointID'];
 		$data['pointName'] = $_POST['pointName'];
 
 		if($this->Fields_model->Add($data))

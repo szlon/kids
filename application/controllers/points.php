@@ -70,6 +70,7 @@ class Points extends CI_Controller
 	{
 		$data['title'] = 'Points';
 		$data['points'] = $this->Points_model->GetRecords($id);
+		$data['pointSum'] = $this->Points_model->GetSum($id);
 
 		//$this->load->view('points_list.html', $data);
 		$this->load->view('kidview/points_list.php', $data);

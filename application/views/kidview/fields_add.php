@@ -26,7 +26,7 @@
 						</div>
 					</div>
 
-					<div class="control-group">
+					<div class="control-group hide">
 						<!-- Text input-->
 						<label class="control-label" for="input01">字段编号</label>
 						<div class="controls">
