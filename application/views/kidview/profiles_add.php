@@ -17,7 +17,7 @@
 
 			<form class="form-horizontal" action="<?php echo site_url('profiles/Add_Post') ?>" method="post">
 				<fieldset>
-					<div class="control-group">
+					<div class="control-group hide">
 						<!-- Text input-->
 						<label class="control-label" for="input01">用户编号</label>
 						<div class="controls">

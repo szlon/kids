@@ -20,7 +20,7 @@ class Fields extends CI_Controller
 		}
 		else
 		{
-			redirect(site_url('account/login/'));
+			redirect(site_url('userlogin/login/'));
 		}
 	}
 
@@ -29,7 +29,7 @@ class Fields extends CI_Controller
 		//$this->load->view('fields_add.html');
 		$data['title'] = 'Fields Edit';
 		$data['userID'] = $this->session->userdata('userID');
-		$this->load->view('fields_add.php', $data);
+		$this->load->view('kidview/fields_add.php', $data);
 	}
 
 	public function Add_Post()
@@ -62,7 +62,7 @@ class Fields extends CI_Controller
 		$data['title'] = 'Fields';
 		$data['fields'] = $this->Fields_model->GetRecords($id);
 		//$this->load->view('fields_list.html', $data);
-		$this->load->view('fields_list.php', $data);
+		$this->load->view('kidview/fields_list.php', $data);
 	}
 
 

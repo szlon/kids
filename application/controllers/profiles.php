@@ -20,7 +20,7 @@ class Profiles extends CI_Controller
 		}
 		else
 		{
-			redirect(site_url('account/login/'));
+			redirect(site_url('userlogin/login/'));
 		}
 	}
 
@@ -29,7 +29,7 @@ class Profiles extends CI_Controller
 		//$this->load->view('profiles_add.html');
 		$data['title'] = 'Profiles_add Edit';
 		$data['userID'] = $this->session->userdata('userID');
-		$this->load->view('profiles_add.php', $data);
+		$this->load->view('kidview/profiles_add.php', $data);
 
 	}
 
@@ -68,7 +68,7 @@ class Profiles extends CI_Controller
 		$data['title'] = 'Profiles';
 		$data['profiles'] = $this->Profiles_model->GetRecords($id);
 		//$this->load->view('profiles_list.html', $data);
-		$this->load->view('profiles_list.php', $data);
+		$this->load->view('kidview/profiles_list.php', $data);
 
 	}
 

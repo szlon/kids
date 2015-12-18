@@ -19,8 +19,10 @@
 				<table class="table table-striped table-bordered">
 					<thead>
 					<tr>
+						<!--
 						<th>ID</th>
 						<th>UserName</th>
+						-->
 						<th>PointID</th>
 						<th>PointName</th>
 					</tr>
@@ -29,8 +31,10 @@
 					<tbody>
 					<?php foreach($fields as $row) : ?>
 						<tr>
+							<!--
 							<td><?php echo $row['id'] ?> </td>
 							<td><?php echo $row['userName'] ?> </td>
+							-->
 							<td><?php echo $row['pointID'] ?> </td>
 							<td><?php echo $row['pointName'] ?> </td>
 

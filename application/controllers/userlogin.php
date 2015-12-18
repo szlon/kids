@@ -1,14 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Account extends CI_Controller
+class Userlogin extends CI_Controller
 {
     public function __construct()
     {
         parent:: __construct();
-
-        $this->load->model('account_model');
-
     }
 
     public function index()
@@ -18,7 +15,13 @@ class Account extends CI_Controller
 
     public function login()
     {
-        $this->load->view('account/login');
+        $this->load->view('kidview/user_login.php');
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('kidview/user_login.php');
     }
 
     public function login_post()
@@ -32,7 +35,7 @@ class Account extends CI_Controller
         {
            // echo 'Input Error';
             $this->form_validation->set_message('login_post', '用户名不存在');
-            $this->load->view('account/login');
+            $this->load->view('kidview/user_login.php');
         }
         else
         {
@@ -82,7 +85,7 @@ class Account extends CI_Controller
                     else
                     {
                         echo 'login failed!';
-                        redirect(site_url('account/login/'));
+                        redirect(site_url('userlogin/login'));
                     }
                 }
                 else if ($typeName == 'register')
@@ -94,11 +97,6 @@ class Account extends CI_Controller
 
                     //$this->load->view('usercenter', $data );
                 }
-                else
-                {
-                    $this->session->sess_destroy();
-                    $this->load->view('account/login/');
-                }
 
             }
 
@@ -106,11 +104,7 @@ class Account extends CI_Controller
     }
 
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        $this->load->view('account/login');
-    }
+
 
 
 }

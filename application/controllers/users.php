@@ -22,7 +22,7 @@ class Users extends CI_Controller
 		}
 		else
 		{
-			redirect(site_url('account/login/'));
+			redirect(site_url('userlogin/login/'));
 		}
 	}
 
@@ -31,7 +31,7 @@ class Users extends CI_Controller
 	{
 		//$this->load->view('users_add.html');
 		$data['title'] = 'Users Edit';
-		$this->load->view('users_add.php', $data);
+		$this->load->view('kidview/users_add.php', $data);
 
 	}
 
@@ -67,7 +67,7 @@ class Users extends CI_Controller
 		*/
 
 		//$this->load->view('users_list.html', $data);
-		$this->load->view('users_list.php', $data);
+		$this->load->view('kidview/users_list.php', $data);
 
 	}
 
@@ -76,7 +76,9 @@ class Users extends CI_Controller
 		$data['title'] = 'Profiles';
 		$data['profiles'] = $this->Profiles_model->GetRecords($id);
 		//$this->load->view('profiles_list.html', $data);
-		$this->load->view('profiles_list.php', $data);
+		$this->load->view('kidview/profiles_list.php', $data);
 
 	}
+
+
 }

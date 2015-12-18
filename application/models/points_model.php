@@ -53,9 +53,9 @@ class Points_model extends CI_Model
     {
         //$sql = "SELECT users.id, users.userName, fields.pointName, points.pointValue FROM users, fields, points WHERE users.id = ? AND users.id = fields.id AND users.id = points.id";
 
-        $sql =  "SELECT users.id, users.userName, fields.pointName, points.pointValue FROM users, fields, points WHERE";
+        $sql =  "SELECT users.id, users.userName, fields.pointName, points.pointValue, points.pointTime FROM users, fields, points WHERE";
 
-        $sqlWhere = "users.id = fields.id AND users.id = points.id AND fields.pointID = points.pointID";
+        $sqlWhere = "users.id = fields.id AND users.id = points.id AND fields.pointID = points.pointID ORDER BY points.pointTime DESC";
 
         if($id > 0)
         {

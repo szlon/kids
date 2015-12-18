@@ -65,12 +65,12 @@ create table points(
 	id int unsigned not null,
 	pointTime int unsigned not null primary key default 0,
 	pointID int unsigned not null,
-	pointValue int unsigned not null
+	pointValue int not null
 )engine=myisam charset=utf8;
 
 create table fields(
 	id int unsigned not null,
-	pointID int unsigned not null,
+	pointID int unsigned not null auto_increment,
 	pointName varchar(50) not null default '',
 	unique key `UKEY` (`id`,`pointID`)
 )engine=myisam charset=utf8;

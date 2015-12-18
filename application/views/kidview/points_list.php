@@ -19,22 +19,32 @@
         <table class="table table-striped table-bordered">
           <thead>
           <tr>
+            <!--
             <th>ID</th>
             <th>UserName</th>
+            -->
+            <th>Time</th>
             <th>PointName</th>
             <th>PointValue</th>
           </tr>
           </thead>
 
           <tbody>
-          <?php foreach($points as $row) : ?>
+          <?php $pointTotal = 0; foreach($points as $row) : ?>
+              <?php $pointTotal = $pointTotal + $row['pointValue']; ?>
             <tr>
+              <!--
               <td><?php echo $row['id'] ?> </td>
               <td><?php echo $row['userName'] ?> </td>
+              <td><?php echo mdate('%Y-%m-%d %h:%i:%s', $row['pointTime']) ?> </td>
+              -->
+
+              <td><?php echo mdate('%Y-%m-%d', $row['pointTime']) ?> </td>
               <td><?php echo $row['pointName'] ?> </td>
               <td><?php echo $row['pointValue'] ?> </td>
             </tr>
           <?php endforeach; ?>
+          <tr><td></td></td><td>总计</td><td><?php echo $pointTotal; ?></td></tr>
           </tbody>
         </table>
       </div>

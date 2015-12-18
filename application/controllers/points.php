@@ -21,7 +21,7 @@ class Points extends CI_Controller
 		}
 		else
 		{
-			redirect(site_url('account/login/'));
+			redirect(site_url('userlogin/login/'));
 		}
 	}
 
@@ -34,7 +34,7 @@ class Points extends CI_Controller
 		//$this->load->view('points_add.html');
 		$data['title'] = 'Points Edit';
 		$data['userID'] = $userID;
-		$this->load->view('points_add.php', $data);
+		$this->load->view('kidview/points_add.php', $data);
 	}
 
 	public function Add_Post()
@@ -72,7 +72,7 @@ class Points extends CI_Controller
 		$data['points'] = $this->Points_model->GetRecords($id);
 
 		//$this->load->view('points_list.html', $data);
-		$this->load->view('points_list.php', $data);
+		$this->load->view('kidview/points_list.php', $data);
 	}
 
 
