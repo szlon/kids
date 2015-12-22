@@ -9,20 +9,21 @@ class Points extends CI_Controller
 
 		$this->load->model('Points_model');
 		$this->load->model('Fields_model');
+
+		$userID = $this->session->userdata('userID');
+		if (!isset($userID) || empty($userID))
+		{
+			redirect(site_url('userlogin/login/'));
+		}
+
 	}
 
 	public function index()
 	{
 		$userID = $this->session->userdata('userID');
 
-		if (isset($userID) && !empty($userID))
-		{
-			$this->get($userID);
-		}
-		else
-		{
-			redirect(site_url('userlogin/login/'));
-		}
+		$this->get($userID);
+
 	}
 
 	public function Add()

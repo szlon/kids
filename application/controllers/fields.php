@@ -49,6 +49,38 @@ class Fields extends CI_Controller
 		}
 	}
 
+	public function eidt_post()
+	{
+		$data['id'] = $_POST['id'];
+		$data['pointID'] = $_POST['pointID'];
+		$data['pointName'] = $_POST['pointName'];
+
+		if($this->Fields_model->edit($data))
+		{
+			echo 'edit success';
+		}
+		else
+		{
+			echo 'failed';
+		}
+	}
+
+	public function  del_post()
+	{
+		$data['id'] = $_POST['id'];
+		$data['pointID'] = $_POST['pointID'];
+
+		if($this->Fields_model->del($data))
+		{
+			echo 'edit success';
+		}
+		else
+		{
+			echo 'failed';
+		}
+
+	}
+
 	public function show()
 	{
 		//$query['fields'] = $this->Fields_model->GetAll();
@@ -66,5 +98,36 @@ class Fields extends CI_Controller
 	}
 
 
+	public function grid()
+	{
+		$this->load->view('fields_gridview.php');
+	}
+
+	public function ajax_response()
+	{
+		$json_data = array(
+			"current"            => 1,
+			"rowCount"            => 10,
+			"total"    			=> 2,
+			"rows"            => array
+			(
+				[	"id" => 1,
+					"userName" => "TT",
+					"pointID"=>1,
+					"pointName"=>"字段1"
+				],
+				[	"id" => 2,
+					"userName" => "TT",
+					"pointID"=>2,
+					"pointName"=>"字段2"
+				],
+			)
+		);
+
+		//var_dump(json_encode($json_data));
+
+
+		echo json_encode($json_data);
+	}
 
 }
