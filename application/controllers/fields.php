@@ -102,32 +102,22 @@ class Fields extends CI_Controller
 	{
 		$this->load->view('fields_gridview.php');
 	}
-
+	
 	public function ajax_response()
 	{
+		$userID = $this->session->userdata('userID');
+
+		$data = $this->Fields_model->GetRecords($userID);
+
 		$json_data = array(
 			"current"            => 1,
 			"rowCount"            => 10,
-			"total"    			=> 2,
-			"rows"            => array
-			(
-				[	"id" => 1,
-					"userName" => "TT",
-					"pointID"=>1,
-					"pointName"=>"字段1"
-				],
-				[	"id" => 2,
-					"userName" => "TT",
-					"pointID"=>2,
-					"pointName"=>"字段2"
-				],
-			)
+			"total"    			=> count($data),
+			"rows"            => $data
 		);
 
-		//var_dump(json_encode($json_data));
-
+		//var_dump($data);
 
 		echo json_encode($json_data);
 	}
-
 }
